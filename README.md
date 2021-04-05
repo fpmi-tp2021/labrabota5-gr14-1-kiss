@@ -5,7 +5,12 @@
 *TODO*
 
 # Installation
-*TODO*
+
+Clone the repository with submodules
+
+```
+$ git clone --recurse-submodules
+```
 
 # Usage 
 *TODO*
