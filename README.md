@@ -20,7 +20,12 @@ The project is made for commander of the air squad. It stores the information ab
 - get information about the crew or the crew member(with specific details about all flights that were made by crew or person)
 
 # Installation
-*TODO*
+
+Clone the repository with submodules
+
+```
+$ git clone --recurse-submodules https://github.com/fpmi-tp2021/labrabota5-gr14-1-kiss.git
+```
 
 # Usage
 *TODO*

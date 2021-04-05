@@ -1,0 +1,3 @@
+[submodule "doc"]
+	path = doc
+	url = https://github.com/fpmi-tp2021/labrabota5-kiss-report
