@@ -3,7 +3,7 @@ DB=flights.db
 SQLDIR=sql
 SQL_SCRIPTS=$(wildcard $(SQLDIR)/*)
 
-flights.db: $(SQL_SCRIPTS)
+$(DB): $(SQL_SCRIPTS)
 	-for script in $(SQL_SCRIPTS); \
 	do \
 	$(SQLITE) <$$script $(DB) ; \
