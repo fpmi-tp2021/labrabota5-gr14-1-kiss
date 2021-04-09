@@ -12,4 +12,4 @@ $(DB): $(SQL_SCRIPTS)
 clean:
 	-rm $(DB)
 
-.PHONY: test-sql clean
+.PHONY: clean
