@@ -1,10 +1,9 @@
 CREATE TABLE Helicopters (
     number INTEGER PRIMARY KEY AUTOINCREMENT,
-    brand varchar(30) NOT NULL,
-    data date NOT NULL,
-    capacity real(12,3) NOT NULL,
-    last_overhaul date NOT NULL,
-    till_overhaul int NOT NULL,
-    pilot_identification_number int NOT NULL,
-
+    brand VARCHAR(30) NOT NULL,
+    data DATE NOT NULL,
+    capacity REAL(12,3) NOT NULL,
+    last_overhaul DATE NOT NULL,
+    till_overhaul INT NOT NULL,
+    pilot_identification_number INT NOT NULL
 );
