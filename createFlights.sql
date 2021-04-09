@@ -1,5 +1,5 @@
 CREATE TABLE Flights (
-    id int NOT NULL,
+    id INTEGER PRIMERY KEY AUTOINCREMENT,
     hours int NOT NULL,
     cost int NOT NULL,
     date date NOT NULL,
@@ -7,5 +7,4 @@ CREATE TABLE Flights (
     weight real(12,3) NOT NULL,
     quantity int NOT NULL,
     special bool NOT NULL,
-    CONSTRAINT Flights_pk PRIMARY KEY (id)
 );
