@@ -1,5 +1,5 @@
 CREATE TABLE Flights (
-    id INTEGER PRIMERY KEY AUTOINCREMENT,
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
     hours int NOT NULL,
     cost int NOT NULL,
     date date NOT NULL,

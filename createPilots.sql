@@ -1,5 +1,5 @@
 CREATE TABLE Pilots (
-    identification_number INTEGER PRIMERY KEY AUTOINCREMENT,
+    identification_number INTEGER PRIMARY KEY AUTOINCREMENT,
     surname varchar(30) NOT NULL,
     position varchar(30) NOT NULL,
     helicopter_number int NOT NULL,

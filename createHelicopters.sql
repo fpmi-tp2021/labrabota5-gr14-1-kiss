@@ -1,5 +1,5 @@
 CREATE TABLE Helicopters (
-    number INTEGER PRIMERY KEY AUTOINCREMENT,
+    number INTEGER PRIMARY KEY AUTOINCREMENT,
     brand varchar(30) NOT NULL,
     date date NOT NULL,
     capacity real(12,3) NOT NULL,
