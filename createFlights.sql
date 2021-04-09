@@ -1,8 +1,8 @@
 CREATE TABLE Flights (
-    id INTEGER PRIMERY KEY AUTOINCREMENT,
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
     hours int NOT NULL,
     cost int NOT NULL,
-    date date NOT NULL,
+    data date NOT NULL,
     helicopter_number int NOT NULL,
     weight real(12,3) NOT NULL,
     quantity int NOT NULL,
