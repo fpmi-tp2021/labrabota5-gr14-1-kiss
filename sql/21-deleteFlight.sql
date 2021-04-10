@@ -1,0 +1,2 @@
+DELETE FROM Flights
+WHERE date = '12-12-2020';
