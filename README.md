@@ -27,6 +27,20 @@ Clone the repository with submodules
 $ git clone --recurse-submodules https://github.com/fpmi-tp2021/labrabota5-gr14-1-kiss.git
 ```
 
+To install or uninstall the program, run
+
+```
+# make install
+```
+
+or
+
+```
+# make uninstall
+```
+
+respectively from the project directory.
+
 # Usage
 *TODO*
 

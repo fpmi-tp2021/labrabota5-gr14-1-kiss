@@ -32,4 +32,15 @@ clean:
 	-rmdir $(BIN)
 	-cd doc && make clean
 
+ifeq ($(PREFIX),)
+    PREFIX := /usr/local
+endif
+
+install: $(BIN)
+	install -d $(DESTDIR)$(PREFIX)/bin/
+	install -m 755 $(BIN)/$(PROGRAM) $(DESTDIR)$(PREFIX)/bin/
+
+uninstall:
+	rm $(DESTDIR)$(PREFIX)/bin/$(PROGRAM)
+
 .PHONY: clean run
