@@ -5,6 +5,7 @@ SQL_SCRIPTS=$(wildcard $(SQLDIR)/*)
 CC=gcc
 LIBS=-l sqlite3
 SOURCE=./src/airway.c
+INCDIR=./include
 PROGRAM=airway
 BIN=bin
 
@@ -18,7 +19,7 @@ $(DB): $(SQL_SCRIPTS)
 
 $(BIN)/$(PROGRAM):  $(SOURCE)
 	-mkdir $(BIN)
-	$(CC) $< -o $@ $(LIBS)
+	$(CC) -I $(INCDIR) $< -o $@ $(LIBS)
 
 run: $(BIN)/$(PROGRAM) $(DB)
 	./$(BIN)/$(PROGRAM) $(DB)
