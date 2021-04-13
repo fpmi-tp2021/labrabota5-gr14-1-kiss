@@ -44,7 +44,7 @@ respectively from the project directory.
 # Usage
 *TODO*
 
-# Contributing
+# Authors
 
 [Herman Yanush](https://github.com/jiffygist)
 
