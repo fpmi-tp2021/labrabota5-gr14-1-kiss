@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <sqlite3.h>
 
@@ -38,9 +39,9 @@ ask_query()
 	printf("2\tquery3\n");
 	printf("\n");
 	printf("\033[32m");
-	system ("/bin/stty raw");
+	system("/bin/stty raw");
 	char c = getchar();
-	system ("/bin/stty cooked");
+	system("/bin/stty cooked");
 	printf("\033[0m\n");
 	return c;
 }
