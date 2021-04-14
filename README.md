@@ -19,6 +19,12 @@ The project is made for commander of the air squad. It stores the information ab
 
 - get information about the crew or the crew member(with specific details about all flights that were made by crew or person)
 
+# Dependencies
+
+- [sqlite3](https://sqlite.org/)
+- [chafa](https://github.com/hpjansson/chafa)
+- [jpg2ff](http://git.suckless.org/farbfeld/files.html)
+
 # Installation
 
 Clone the repository with submodules
