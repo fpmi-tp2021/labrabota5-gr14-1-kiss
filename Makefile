@@ -11,7 +11,7 @@ BIN=bin
 
 all: doc/report.pdf $(DB) $(BIN)/$(PROGRAM)
 
-$(DB): $(SQL_SCRIPTS)
+$(DB): $(SQL_SCRIPTS) plane.ff
 	-for script in $(SQL_SCRIPTS); \
 	do \
 	$(SQLITE) <$$script $(DB) ; \
@@ -28,8 +28,12 @@ run: $(BIN)/$(PROGRAM) $(DB)
 doc/report.pdf:
 	cd doc && make
 
+plane.ff:
+	jpg2ff <plane.jpg >$@
+
 clean:
 	-rm $(DB)
+	-rm plane.ff
 	-rm $(BIN)/$(PROGRAM)
 	-rmdir $(BIN)
 	-cd doc && make clean
