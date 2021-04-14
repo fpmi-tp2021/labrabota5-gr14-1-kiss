@@ -4,7 +4,7 @@ SQLDIR=sql
 SQL_SCRIPTS=$(wildcard $(SQLDIR)/*)
 CC=gcc
 LIBS=-l sqlite3
-SOURCE=./src/airway.c
+SOURCE=./src/farbfeld.c ./src/airway.c
 INCDIR=./include
 PROGRAM=airway
 BIN=bin
@@ -17,9 +17,10 @@ $(DB): $(SQL_SCRIPTS)
 	$(SQLITE) <$$script $(DB) ; \
 	done
 
-$(BIN)/$(PROGRAM):  $(SOURCE)
+$(BIN)/$(PROGRAM): $(SOURCE)
 	-mkdir $(BIN)
-	$(CC) -I $(INCDIR) $< -o $@ $(LIBS)
+	@echo $^
+	$(CC) -I $(INCDIR) $^ -o $@ $(LIBS)
 
 run: $(BIN)/$(PROGRAM) $(DB)
 	./$(BIN)/$(PROGRAM) $(DB)
