@@ -4,7 +4,7 @@
 #include <sqlite3.h>
 
 #include "queries.h"
-#include "farbfeld.h"
+#include "farbfeld-print.h"
 
 void print_greeting();
 sqlite3* connect_to_database(char *filename);
@@ -77,8 +77,6 @@ int main(int argc, char **argv)
 	char query[250];
 	int done = 0, rc = 0, bytes = 0;
 	void *farbfeld_image;
-	uint16_t *pixels;
-	uint32_t width, height;
 	while (!done) {
 		char qn = ask_query();
 		switch (qn) {
@@ -97,7 +95,7 @@ int main(int argc, char **argv)
 				printf("read %d bytes\n", bytes);
 			}
 			farbfeld_image = sqlite3_column_blob(pStmt, 0);
-			pixels = farbfeld_read(farbfeld_image, &width, &height);
+			farbfeld_print(farbfeld_image);
 			printf("\n");
 			continue;
 		case Q_ALL_HELICOPTERS:

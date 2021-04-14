@@ -3,8 +3,8 @@ DB=flights.db
 SQLDIR=sql
 SQL_SCRIPTS=$(wildcard $(SQLDIR)/*)
 CC=gcc
-LIBS=-l sqlite3
-SOURCE=./src/farbfeld.c ./src/airway.c
+LIBS=-l sqlite3 `pkg-config --libs chafa`
+SOURCE=./src/farbfeld.c ./src/farbfeld-print.c ./src/airway.c
 INCDIR=./include
 PROGRAM=airway
 BIN=bin
@@ -19,8 +19,8 @@ $(DB): $(SQL_SCRIPTS)
 
 $(BIN)/$(PROGRAM): $(SOURCE)
 	-mkdir $(BIN)
-	@echo $^
-	$(CC) -I $(INCDIR) $^ -o $@ $(LIBS)
+	@echo `pkg-config --cflags chafa`
+	$(CC) -I $(INCDIR) `pkg-config --cflags chafa` $^ -o $@ $(LIBS)
 
 run: $(BIN)/$(PROGRAM) $(DB)
 	./$(BIN)/$(PROGRAM) $(DB)
