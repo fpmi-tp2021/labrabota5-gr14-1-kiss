@@ -1,5 +1,7 @@
 #pragma once
 
+#define QUERY_IMAGE "SELECT image FROM Helicopters WHERE number=1"
+#define Q_IMAGE 'i'
 #define QUERY_ALL_FLIGHTS "SELECT * FROM Flights"
 #define Q_ALL_FLIGHTS 'F'
 #define QUERY_ALL_HELICOPTERS "SELECT * FROM Helicopters"
