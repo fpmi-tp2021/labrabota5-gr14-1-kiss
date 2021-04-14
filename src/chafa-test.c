@@ -3,7 +3,7 @@
 #include <arpa/inet.h>
 
 #define N_CHANNELS 4 
-#define IMG_HEIGHT 24 
+#define IMG_WIDTH 24 
 
 #define HEADER_LENGTH 4
 
@@ -68,7 +68,7 @@ main (int argc, char *argv [])
 
 	/* Set up a configuration with the symbols and the canvas size in characters */
 	config = chafa_canvas_config_new ();
-	chafa_canvas_config_set_geometry (config, IMG_HEIGHT*ratio*ratio, IMG_HEIGHT);
+	chafa_canvas_config_set_geometry (config, IMG_WIDTH*ratio*ratio, IMG_WIDTH);
 	chafa_canvas_config_set_symbol_map (config, symbol_map);
 
 	/* Create canvas */

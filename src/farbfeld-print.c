@@ -13,7 +13,7 @@ farbfeld_print(void *farbfeld_data)
 	if (pixels == NULL) {
 		fprintf(stderr, "error reading image");
 	}
-	float ratio = (float)width / height;
+	float ratio = (float)(width * K_RATIO_ADJUST) / height;
 	printf("width: %d, height: %d, ratio: %f\n", width, height, ratio);
 
 	uint8_t *pixels_8bit = malloc(width * height * 4 * sizeof(uint8_t));
@@ -29,9 +29,13 @@ farbfeld_print(void *farbfeld_data)
 	symbol_map = chafa_symbol_map_new ();
 	chafa_symbol_map_add_by_tags (symbol_map, CHAFA_SYMBOL_TAG_ALL);
 
+	int canvas_width = IMG_WIDTH;
+	int canvas_height = IMG_WIDTH/ratio;
+	printf("canvas width: %d, canvas height: %d\n", canvas_width, canvas_height);
+
 	/* Set up a configuration with the symbols and the canvas size in characters */
 	config = chafa_canvas_config_new ();
-	chafa_canvas_config_set_geometry (config, IMG_HEIGHT*ratio*ratio, IMG_HEIGHT);
+	chafa_canvas_config_set_geometry (config, canvas_width, canvas_height);
 	chafa_canvas_config_set_symbol_map (config, symbol_map);
 
 	/* Create canvas */
