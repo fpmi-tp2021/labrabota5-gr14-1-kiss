@@ -1,5 +1,1 @@
-select d as Cost,t as Surname, w as Data, e as Quantity, r as Weight, max(q) as Flights_total
-from (
-  select sum(Flights.cost) as q, Flights.date as w, Flights.quantity as e, Flights.weight as r, Pilots.surname as t, Flights.cost as d
-  from Helicopters INNER JOIN Flights ON Helicopters.number = Flights.helicopter_number INNER JOIN Pilots ON Pilots.helicopter_number = Helicopters.number
-)
+select Flights.date, Flights.weight, Flights.cost, h from flights inner join (select h,max(total) from (select sum(fc) as total, hn as h from (select Pilots.surname as s, sum(Flights.cost) as fc, Flights.helicopter_number as hn FROM Pilots INNER JOIN Flights ON Pilots.helicopter_number = Flights.helicopter_number GROUP BY Pilots.surname) GROUP BY hn)) ON flights.helicopter_number = h;

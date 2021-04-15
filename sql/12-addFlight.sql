@@ -11,9 +11,9 @@ INSERT INTO Flights (hours, cost, date, helicopter_number, weight, quantity, spe
 INSERT INTO Flights (hours, cost, date, helicopter_number, weight, quantity, special)
     VALUES (8, 4250, '10-2-2000', 2, 1.8621057274127257, 44, 0);
 INSERT INTO Flights (hours, cost, date, helicopter_number, weight, quantity, special)
-    VALUES (9, 4750, '21-8-2003', 6, 4.867015520251796, 36, 0);
+    VALUES (9, 4750, '21-8-2003', 1, 4.867015520251796, 36, 0);
 INSERT INTO Flights (hours, cost, date, helicopter_number, weight, quantity, special)
-    VALUES (9, 4500, '10-3-2007', 7, 4.838958229113954, 29, 0);
+    VALUES (9, 4500, '10-3-2007', 1, 4.838958229113954, 29, 0);
 INSERT INTO Flights (hours, cost, date, helicopter_number, weight, quantity, special)
     VALUES (0, 4500, '23-2-2001', 3, 2.4508831132558226, 41, 0);
 INSERT INTO Flights (hours, cost, date, helicopter_number, weight, quantity, special)
