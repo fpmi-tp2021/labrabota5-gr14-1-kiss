@@ -1,5 +1,6 @@
-# Project Name
-AIRWAY
+# AIRWAY
+
+![](https://github.com/fpmi-tp2021/labrabota5-kiss-report/raw/report/data/query-menu.png)
 
 # Description
 
@@ -52,7 +53,19 @@ or
 respectively from the project directory.
 
 # Usage
-*TODO*
+
+The program needs a database to operate on.
+You can generate an example database from the sql scripts provided in the sql directory.
+
+```
+$ make flights.db
+```
+
+Specify path to the database file as a single command line argument to the program.
+
+```
+$ airway flights.db
+```
 
 # Authors
 
