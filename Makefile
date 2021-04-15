@@ -8,6 +8,7 @@ SOURCE=./src/farbfeld.c ./src/farbfeld-print.c ./src/airway.c
 INCDIR=./include
 PROGRAM=airway
 BIN=bin
+MANPREFIX=/usr/local/share/man
 
 all: doc/report.pdf $(DB) $(BIN)/$(PROGRAM)
 
@@ -45,8 +46,12 @@ endif
 install: $(BIN)
 	install -d $(DESTDIR)$(PREFIX)/bin/
 	install -m 755 $(BIN)/$(PROGRAM) $(DESTDIR)$(PREFIX)/bin/
+	mkdir -p $(DESTDIR)$(MANPREFIX)/man6
+	echo $(MANPREFIX)
+	cp $(PROGRAM).6 $(DESTDIR)$(MANPREFIX)/man6/$(PROGRAM).6
 
 uninstall:
-	rm $(DESTDIR)$(PREFIX)/bin/$(PROGRAM)
+	rm -f $(DESTDIR)$(PREFIX)/bin/$(PROGRAM)
+	rm -f $(DESTDIR)$(MANPREFIX)/man6/$(PROGRAM).6
 
 .PHONY: clean run
