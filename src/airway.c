@@ -41,6 +41,7 @@ ask_query()
 	printf("%c\t%s\n", Q_ALL_FLIGHTS, QUERY_ALL_FLIGHTS);
 	printf("%c\t%s\n", Q_1, QUERY_1);
 	printf("%c\t%s\n", Q_2, QUERY_2);
+	printf("%c\t%s\n", Q_3, QUERY_3);
 	printf("\n");
 	printf("\033[32m");
 	system("/bin/stty raw");
@@ -112,6 +113,9 @@ int main(int argc, char **argv)
 			break;
 		case Q_2:
 			strcpy(query, QUERY_2);
+			break;
+		case Q_3:
+			strcpy(query, QUERY_3);
 			break;
 		default:
 			printf("\033[33mᐱ unknown query\033[0m\n", qn);

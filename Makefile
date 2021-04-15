@@ -27,7 +27,7 @@ run: $(BIN)/$(PROGRAM) $(DB)
 	./$(BIN)/$(PROGRAM) $(DB)
 
 doc/report.pdf:
-	cd doc && make
+	-cd doc && make
 
 plane.ff:
 	jpg2ff <plane.jpg >$@

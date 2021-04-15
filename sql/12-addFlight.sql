@@ -1,13 +1,13 @@
 INSERT INTO Flights (hours, cost, date, helicopter_number, weight, quantity, special)
     VALUES (3, 1000, '12-03-2020', 2, 4.98, 12, 0);
 INSERT INTO Flights (hours, cost, date, helicopter_number, weight, quantity, special)
-    VALUES (2, 2000, '12-6-2009', 3, 3.160649402009925, 34, 0);
+    VALUES (2, 2000, '12-6-2009', 3, 3.160649402009925, 34, 1);
 INSERT INTO Flights (hours, cost, date, helicopter_number, weight, quantity, special)
 	VALUES (7, 750, '28-11-2016', 7, 2.991842311364755, 3, 0);	
 INSERT INTO Flights (hours, cost, date, helicopter_number, weight, quantity, special)
     VALUES (7, 3750, '18-10-2012', 7, 2.1592498821107533, 40, 0);
 INSERT INTO Flights (hours, cost, date, helicopter_number, weight, quantity, special)
-    VALUES (0, 1250, '1-7-2012', 1, 2.9623104694339313, 17, 0);
+    VALUES (0, 1250, '1-7-2012', 1, 2.9623104694339313, 17, 1);
 INSERT INTO Flights (hours, cost, date, helicopter_number, weight, quantity, special)
     VALUES (8, 4250, '10-2-2000', 2, 1.8621057274127257, 44, 0);
 INSERT INTO Flights (hours, cost, date, helicopter_number, weight, quantity, special)

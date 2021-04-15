@@ -12,3 +12,5 @@
 #define Q_1 'o'
 #define QUERY_2 "SELECT Helicopters.brand, sum(Flights.hours), sum(Flights.quantity), Flights.id, Flights.date FROM Helicopters INNER JOIN Flights ON Helicopters.number = Flights.helicopter_number;"
 #define Q_2 'f'
+#define QUERY_3 "SELECT Helicopters.brand, sum(Flights.hours), sum(Flights.quantity), sum(Flights.cost), COUNT(Flights.id) as Kolvo FROM Helicopters INNER JOIN Flights ON Helicopters.number = Flights.helicopter_number WHERE Flights.special = 1;"
+#define Q_3 'j'
