@@ -5,5 +5,6 @@ CREATE TABLE Helicopters (
     capacity REAL(12,3) NOT NULL,
     last_overhaul DATE NOT NULL,
     till_overhaul INT NOT NULL,
-    pilot_identification_number INT NOT NULL
+    pilot_identification_number INT NOT NULL,
+	image BLOB
 );
