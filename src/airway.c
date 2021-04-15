@@ -42,6 +42,10 @@ ask_query()
 	printf("%c\t%s\n", Q_1, QUERY_1);
 	printf("%c\t%s\n", Q_2, QUERY_2);
 	printf("%c\t%s\n", Q_3, QUERY_3);
+	printf("%c\t%s\n", Q_4, QUERY_4);
+	printf("%c\t%s\n", Q_5, QUERY_5);
+	printf("%c\t%s\n", Q_6, QUERY_6);
+	printf("%c\t%s\n", Q_7, QUERY_7);
 	printf("\n");
 	printf("\033[32m");
 	system("/bin/stty raw");
@@ -116,6 +120,18 @@ int main(int argc, char **argv)
 			break;
 		case Q_3:
 			strcpy(query, QUERY_3);
+			break;
+		case Q_4:
+			strcpy(query, QUERY_4);
+			break;
+		case Q_5:
+			strcpy(query, QUERY_5);
+			break;
+		case Q_6:
+			strcpy(query, QUERY_6);
+			break;
+		case Q_7:
+			strcpy(query, QUERY_7);
 			break;
 		default:
 			printf("\033[33mᐱ unknown query\033[0m\n", qn);

@@ -1,5 +1,1 @@
-select q as Model,s as Surname, w as Adress, e as Position, Summa, max(num_flights) as Flights_number
-from (
-  select count(Flights.id) as num_flights, Helicopters.brand as q, Pilots.surname as s,Pilots.adress as w, Pilots.position as e, sum(Flights.cost) as Summa
-  from Helicopters INNER JOIN Flights ON Helicopters.number = Flights.helicopter_number INNER JOIN Pilots ON Pilots.helicopter_number = Helicopters.number GROUP BY Pilots.surname
-);
+select * from pilots inner join (select helicopters.number as hn, helicopters.brand from Helicopters inner join (select max(num_flights), sum(cost) as total, brand as b from (select count(Flights.id) as num_flights, Flights.cost as cost, Helicopters.brand as brand from Flights inner join Helicopters on Flights.helicopter_number = Helicopters.number group by brand)) on helicopters.brand = b) on pilots.helicopter_number = hn group by pilots.surname;
