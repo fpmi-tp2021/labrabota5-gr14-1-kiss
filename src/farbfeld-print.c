@@ -6,7 +6,7 @@
 #include <arpa/inet.h>
 
 void
-farbfeld_print(void *farbfeld_data)
+farbfeld_print(const void *farbfeld_data)
 {
 	uint32_t width = 0, height = 0;
 	uint16_t *pixels = farbfeld_read(farbfeld_data, &width, &height);

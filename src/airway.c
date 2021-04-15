@@ -55,7 +55,32 @@ ask_query()
 	return c;
 }
 
-static int callback(void *data, int argc, char **argv, char **azColName){
+void
+read_image(sqlite3 *db, char *query)
+{
+	sqlite3_stmt *pStmt;
+	int rc = sqlite3_prepare_v2(db, query, -1, &pStmt, 0);
+	if (rc != SQLITE_OK) {
+		fprintf(stderr, "Failed to prepare statement\n");
+	}
+	rc = sqlite3_step(pStmt);
+	int bytes = 0;
+	if (rc == SQLITE_ROW) {
+		bytes = sqlite3_column_bytes(pStmt, 0);
+		printf("read %d bytes\n", bytes);
+	}
+	if (bytes == 0) {
+		printf("nothing was read\n");
+		return;
+	}
+	void *farbfeld_image = sqlite3_column_blob(pStmt, 0);
+	farbfeld_print(farbfeld_image);
+	printf("\n");
+	sqlite3_finalize(pStmt);
+}
+
+static int
+callback(void *data, int argc, char **argv, char **azColName) {
 	int i;
 	fprintf(stderr, "%s: ", (const char*)data);
 
@@ -78,10 +103,8 @@ int main(int argc, char **argv)
 		return 2;
 	}
 	print_greeting();
-	sqlite3_stmt *pStmt;
 	char query[250];
-	int done = 0, rc = 0, bytes = 0;
-	void *farbfeld_image;
+	int done = 0, rc = 0;
 	while (!done) {
 		char qn = ask_query();
 		switch (qn) {
@@ -90,18 +113,7 @@ int main(int argc, char **argv)
 			break;
 		case Q_IMAGE:
 			strcpy(query, QUERY_IMAGE);
-			rc = sqlite3_prepare_v2(db, query, -1, &pStmt, 0);
-			if (rc != SQLITE_OK) {
-				fprintf(stderr, "Failed to prepare statement\n");
-			}
-			rc = sqlite3_step(pStmt);
-			if (rc == SQLITE_ROW) {
-				bytes = sqlite3_column_bytes(pStmt, 0);
-				printf("read %d bytes\n", bytes);
-			}
-			farbfeld_image = sqlite3_column_blob(pStmt, 0);
-			farbfeld_print(farbfeld_image);
-			printf("\n");
+			read_image(db, query);
 			continue;
 		case Q_ALL_HELICOPTERS:
 			strcpy(query, QUERY_ALL_HELICOPTERS);
